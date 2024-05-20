@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .btn-red {
+    @apply bg-red-500 hover:bg-red-400 disabled:bg-red-300 rounded-full text-white font-medium disabled:cursor-not-allowed;
+  }
+
+  .btn-black {
+    @apply bg-black rounded-full text-white font-medium hover:bg-opacity-80 disabled:cursor-not-allowed disabled:bg-opacity-80;
+  }
+
+  .btn-white {
+    @apply bg-white rounded-full border border-zinc-300 text-black font-medium hover:bg-zinc-100 disabled:cursor-not-allowed;
+  }
+
+  .btn-red--disabledWhiteBorders {
+    @apply bg-red-500 rounded-full border text-white font-medium hover:bg-red-400 disabled:border-red-500 disabled:text-red-500 disabled:bg-white disabled:cursor-not-allowed;
+  }
+
+  .btn-text-default {
+    @apply text-16 leading-20;
+  }
+  .btn-text-small {
+    @apply text-14 leading-18;
+  }
+
+  .link-as-btn {
+    @apply flex justify-center items-center;
+  }
+
+  .tbl-row {
+    @apply grid grid-flow-col auto-cols-auto;
+  }
+
+  .tbl-h {
+    @apply flex items-center px-20 py-10 border-solid border border-l-0 border-t-0 border-zinc-200 text-14 text-black text-opacity-60 leading-30;
+  }
+
+  .tbl-h--spacing-y-large {
+    @apply py-20;
+  }
+
+  .tbl-h:first-child {
+    @apply border-t-0;
+  }
+
+  .tbl-h:last-child {
+    @apply border-r-0;
+  }
+
+  .p-break-before-always {
+    page-break-before: always;
+  }
+  .p-break-before-avoid {
+    page-break-before: avoid;
+  }
+  .p-break-after-always {
+    page-break-after: always;
+  }
+  .p-break-after-avoid {
+    page-break-after: avoid;
+  }
+  .p-break-inside-always {
+    page-break-inside: always;
+  }
+  .p-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  html {
+    font-size: calc(100vw / 1440);
+  }
+
+  .content p,
+  .content li {
+    font-size: 16rem;
+    line-height: 28rem;
+  }
+
+  .content ul,
+  .content ol {
+    padding-left: 15rem;
+    list-style: outside;
+    margin: 20rem 20rem 0;
+  }
+
+  .content ul {
+    list-style-type: circle;
+  }
+
+  .content h1 {
+    font-size: 30rem;
+  }
+
+  .content h2 {
+    margin-top: 20rem;
+    font-size: 22rem;
+  }
+
+  .content ol {
+    list-style-type: decimal;
+  }
+
+  .content li {
+    margin-bottom: 10rem;
+  }
+
+  .content li:last-child {
+    margin-bottom: 0rem;
+  }
+
+  .content ul li::marker {
+    color: rgba(255, 0, 0, 1);
+  }
+
+  .content img {
+    max-width: 75%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(229, 231, 235);
+    /* padding: 2.5%; */
+    margin-bottom: 25rem;
+  }
+
+  .content a {
+    @apply text-red-500 hover:text-red-600;
+  }
+
+  @media screen and (min-width: 1440px) {
+    html {
+      font-size: calc(1440px / 1440);
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    html.adaptive {
+      font-size: calc(100vw / 320);
+    }
+  }
+
+  @media print {
+    body {
+      margin-vertical: 20rem;
+    }
+  }
+
+  * {
+    outline: none !important;
+  }
+  *:focus {
+    outline: none;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  .ReactModal__Overlay {
+    @apply inset-0 fixed;
+    /* inset: 0; */
+    /* top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; */
+    background-color: #393957;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+  }
+
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
+  }
+
+  .react-datepicker__time-list {
+    @apply scrollbar-thin scrollbar-thumb-zinc-300 scrollbar-track-zinc-100 hover:scrollbar-thumb-zinc-200;
+  }
+
+  .bg-violet {
+    background-color: #393957;
+  }
+
+  @font-face {
+    font-family: 'CeraPro';
+    font-style: italic;
+    font-weight: 300;
+    src: url('/fonts/CeraPro-LightItalic.eot'); /* IE9 Compat Modes */
+    src: local('CeraPro'), local('CeraPro'), url('/fonts/CeraPro-LightItalic.eot?#iefix') format('embedded-opentype'),
+      /* IE6-IE8 */ url('/fonts/CeraPro-LightItalic.woff') format('woff'), /* Modern Browsers */ url('/fonts/CeraPro-LightItalic.ttf') format('truetype'); /* Safari, Android, iOS */
+  }
+
+  @font-face {
+    font-family: 'CeraPro';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/CeraPro-Light.eot'); /* IE9 Compat Modes */
+    src: local('CeraPro'), local('CeraPro'), url('/fonts/CeraPro-Light.eot?#iefix') format('embedded-opentype'),
+      /* IE6-IE8 */ url('/fonts/CeraPro-Light.woff') format('woff'), /* Modern Browsers */ url('/fonts/CeraPro-Light.ttf') format('truetype'); /* Safari, Android, iOS */
+  }
+
+  @font-face {
+    font-family: 'CeraPro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/CeraPro-Regular.eot'); /* IE9 Compat Modes */
+    src: local('CeraPro'), local('CeraPro'), url('/fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),
+      /* IE6-IE8 */ url('/fonts/CeraPro-Regular.woff') format('woff'), /* Modern Browsers */ url('/fonts/CeraPro-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+  }
+
+  @font-face {
+    font-family: 'CeraPro';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/fonts/CeraPro-RegularItalic.eot'); /* IE9 Compat Modes */
+    src: local('CeraPro'), local('CeraPro'), url('/fonts/CeraPro-RegularItalic.eot?#iefix') format('embedded-opentype'),
+      /* IE6-IE8 */ url('/fonts/CeraPro-RegularItalic.woff') format('woff'), /* Modern Browsers */ url('/fonts/CeraPro-RegularItalic.ttf') format('truetype'); /* Safari, Android, iOS */
+  }
+
+  @font-face {
+    font-family: 'CeraPro';
+    font-style: italic;
+    font-weight: 500;
+    src: url('/fonts/CeraPro-MediumItalic.eot'); /* IE9 Compat Modes */
+    src: local('CeraPro'), local('CeraPro'), url('/fonts/CeraPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+      /* IE6-IE8 */ url('/fonts/CeraPro-MediumItalic.woff') format('woff'), /* Modern Browsers */ url('/fonts/CeraPro-MediumItalic.ttf') format('truetype'); /* Safari, Android, iOS */
+  }
+  @font-face {
+    font-family: 'CeraPro';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/CeraPro-Medium.eot'); /* IE9 Compat Modes */
+    src: local('CeraPro'), local('CeraPro'), url('/fonts/CeraPro-Medium.eot?#iefix') format('embedded-opentype'),
+      /* IE6-IE8 */ url('/fonts/CeraPro-Medium.woff') format('woff'), /* Modern Browsers */ url('/fonts/CeraPro-Medium.ttf') format('truetype'); /* Safari, Android, iOS */
+  }
+  @font-face {
+    font-family: 'CeraPro';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/CeraPro-Bold.eot'); /* IE9 Compat Modes */
+    src: local('CeraPro'), local('CeraPro'), url('/fonts/CeraPro-Bold.eot?#iefix') format('embedded-opentype'),
+      /* IE6-IE8 */ url('/fonts/CeraPro-Bold.woff') format('woff'), /* Modern Browsers */ url('/fonts/CeraPro-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+  }
+
+  @import '~react-image-gallery/styles/css/image-gallery.css';
+  .image-gallery-content .image-gallery-slide .image-gallery-image {
+    max-height: 100vh !important;
+  }
+}
+
+@layer components {
+  .select__dropdown-indicator svg {
+    @apply w-30 h-30;
+  }
+}
+
+@layer utilities {
+  .rotate-x-180 {
+    transform: rotateX(180deg);
+  }
+
+  .popover-top {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 7.5rem 10rem 7.5rem;
+    border-color: transparent transparent #a9a9a9 transparent;
+  }
+}

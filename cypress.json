@@ -1,0 +1,7 @@
+{
+  "projectId": "9wricq",
+  "env": {
+    "MAILDEV_PROTOCOL": "https",
+    "MAILDEV_HOST": "terminal:75ilzm5r0qwrz8wmne4q66c7@maildev.0itsed.terminal.signedup.me"
+  }
+}

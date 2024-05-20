@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  signedup-frontend:
+    container_name: signedup-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    env_file:
+      - .env.local
+    ports:
+      - 3000:3000
+    networks:
+      - signedup
+
+networks:
+  signedup:
+    external: true
